@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ODS 10: Fontes de Informação Especializadas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" xintegrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
         }
         body {
             font-family: 'Lato', sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
             background-color: var(--bg-light);
             color: var(--text-light);
             transition: background-color 0.3s, color 0.3s;
@@ -35,7 +35,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            padding: 2.5rem 3rem;
+            padding: 2rem 1.5rem;
         }
         @media (min-width: 768px) {
             .slide {
@@ -83,19 +83,18 @@
         }
         .references-list {
             font-family: 'Times New Roman', serif;
-            font-size: 0.95rem;
             line-height: 1.6;
         }
-        .presentation-mode #bottom-controls {
+        .presentation-mode #bottom-controls,
+        .presentation-mode #top-controls {
             display: none;
         }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen">
+<body class="md:flex md:items-center md:justify-center min-h-screen">
 
-    <div id="presentation-container" class="w-full max-w-6xl aspect-video bg-white dark:bg-gray-800 shadow-2xl rounded-xl relative overflow-hidden">
+    <div id="presentation-container" class="w-full min-h-screen bg-white dark:bg-gray-800 relative overflow-hidden md:max-w-6xl md:aspect-video md:shadow-2xl md:rounded-xl md:min-h-0 md:h-auto">
         
-        <!-- Painel de Ferramentas Superior -->
         <div id="top-controls" class="absolute top-4 right-4 z-20 flex items-center space-x-2">
             <button id="theme-toggle" title="Alternar Modo Dia/Noite" class="p-2 rounded-full bg-gray-500 bg-opacity-30 text-white hover:bg-opacity-50 transition-all">
                 <svg id="theme-icon-sun" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
@@ -113,85 +112,76 @@
         </div>
 
         <div id="slides-wrapper">
-            <!-- Slide 1: Capa -->
             <div data-slide="1" class="slide slide-active flex flex-col justify-center items-center text-center text-white bg-gradient-to-br from-pink-700 via-red-600 to-red-800">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">Fontes de Informação para o ODS 10</h1>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl mt-4 font-light">Uma Análise Crítica para a Redução das Desigualdades</h2>
-                <p class="mt-8 md:mt-12 text-lg text-red-100 max-w-3xl">Trabalho acadêmico sobre a curadoria e avaliação de fontes de informação especializadas.</p>
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">Fontes de Informação para o ODS 10</h1>
+                <h2 class="text-xl md:text-3xl lg:text-4xl mt-4 font-light">Uma Análise Crítica para a Redução das Desigualdades</h2>
+                <p class="mt-8 text-base md:text-lg text-red-100 max-w-3xl">Trabalho acadêmico sobre a curadoria e avaliação de fontes de informação especializadas.</p>
             </div>
 
-            <!-- Slide 2: a) Introdução - Parte 1 -->
             <div data-slide="2" class="slide slide-hidden flex flex-col justify-center bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">a) Introdução: Agenda 2030 e o ODS 10</h2>
-                <p class="text-lg md:text-xl max-w-4xl">
+                <h2 class="text-2xl md:text-4xl font-bold mb-6">a) Introdução: Agenda 2030 e o ODS 10</h2>
+                <p class="text-base md:text-xl max-w-4xl">
                     A <strong class="text-pink-600 dark:text-pink-400">Agenda 2030</strong> é um plano de ação global para enfrentar os maiores desafios do mundo através de 17 Objetivos de Desenvolvimento Sustentável (ODS).
                 </p>
-                <p class="text-lg md:text-xl mt-4 max-w-4xl">
+                <p class="text-base md:text-xl mt-4 max-w-4xl">
                     Dentre eles, o <strong class="text-pink-600 dark:text-pink-400">ODS 10 – Redução das Desigualdades</strong> – é fundamental. Ele visa diminuir as disparidades de renda e promover a inclusão social, econômica e política de todos, reforçando o compromisso de "não deixar ninguém para trás".
                 </p>
             </div>
             
-            <!-- Slide 3: a) Introdução - Parte 2 -->
             <div data-slide="3" class="slide slide-hidden flex flex-col justify-center bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">a) Introdução: A Importância da Informação Confiável</h2>
-                <p class="text-lg md:text-xl max-w-4xl">
+                <h2 class="text-2xl md:text-4xl font-bold mb-6">a) Introdução: A Importância da Informação Confiável</h2>
+                <p class="text-base md:text-xl max-w-4xl">
                     Para que o ODS 10 se torne realidade, o acesso à <strong class="text-blue-600 dark:text-blue-400">informação de qualidade</strong> é indispensável. Fontes confiáveis permitem a governos e cidadãos monitorar progressos e formular políticas eficazes.
                 </p>
-                <p class="text-lg md:text-xl mt-4 max-w-4xl">
+                <p class="text-base md:text-xl mt-4 max-w-4xl">
                     A abundância de dados exige uma análise crítica. Por isso, a <strong class="text-blue-600 dark:text-blue-400">avaliação de fontes</strong> com base em critérios como autoridade, precisão, atualidade e objetividade é uma competência essencial para navegar neste ecossistema informacional.
                 </p>
             </div>
 
-            <!-- Slide 4: b) Desenvolvimento - Fonte 1 -->
             <div data-slide="4" class="slide slide-hidden flex flex-col justify-center bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (1/5)</h2>
-                <h3 class="text-xl md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">IpeaData (Governamental)</h3>
-                <p class="mb-3 text-md"><strong>Resumo:</strong> Base de dados do Instituto de Pesquisa Econômica Aplicada, com séries temporais e análises sobre a realidade socioeconômica do Brasil.</p>
-                <p class="mb-3 text-md"><strong>Critério de Seleção:</strong> Autoridade como fonte de dados oficiais do Brasil, essencial para mensurar metas de renda e contexto nacional.</p>
-                <p class="mb-3 text-md"><strong>Análise:</strong> Alta precisão metodológica e autoridade. Como ponto de atenção, a granularidade dos dados (recortes de raça/gênero) pode variar e a atualização depende das pesquisas primárias (IBGE).</p>
+                <h2 class="text-xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (1/5)</h2>
+                <h3 class="text-lg md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">IpeaData (Governamental)</h3>
+                <p class="mb-3 text-sm md:text-md"><strong>Resumo:</strong> Base de dados do Instituto de Pesquisa Econômica Aplicada, com séries temporais e análises sobre a realidade socioeconômica do Brasil.</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Critério de Seleção:</strong> Autoridade como fonte de dados oficiais do Brasil, essencial para mensurar metas de renda e contexto nacional.</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Análise:</strong> Alta precisão metodológica e autoridade. Como ponto de atenção, a granularidade dos dados (recortes de raça/gênero) pode variar e a atualização depende das pesquisas primárias (IBGE).</p>
             </div>
 
-            <!-- Slide 5: b) Desenvolvimento - Fonte 2 -->
             <div data-slide="5" class="slide slide-hidden flex flex-col justify-center bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (2/5)</h2>
-                <h3 class="text-xl md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">World Bank Open Data (Internacional)</h3>
-                <p class="mb-3 text-md"><strong>Resumo:</strong> Portal de dados de acesso livre do Banco Mundial com milhares de indicadores de desenvolvimento global.</p>
-                <p class="mb-3 text-md"><strong>Critério de Seleção:</strong> Abrangência global, permitindo a análise comparativa das desigualdades entre países.</p>
-                <p class="mb-3 text-md"><strong>Análise:</strong> Excelente para comparações globais (ex: Coef. de Gini). Limitação na granularidade subnacional e em recortes de raça/etnia. Viés institucional focado em desenvolvimento econômico.</p>
+                <h2 class="text-xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (2/5)</h2>
+                <h3 class="text-lg md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">World Bank Open Data (Internacional)</h3>
+                <p class="mb-3 text-sm md:text-md"><strong>Resumo:</strong> Portal de dados de acesso livre do Banco Mundial com milhares de indicadores de desenvolvimento global.</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Critério de Seleção:</strong> Abrangência global, permitindo a análise comparativa das desigualdades entre países.</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Análise:</strong> Excelente para comparações globais (ex: Coef. de Gini). Limitação na granularidade subnacional e em recortes de raça/etnia. Viés institucional focado em desenvolvimento econômico.</p>
             </div>
 
-            <!-- Slide 6: b) Desenvolvimento - Fonte 3 -->
             <div data-slide="6" class="slide slide-hidden flex flex-col justify-center bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (3/5)</h2>
-                <h3 class="text-xl md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">Oxfam Brasil (ONG)</h3>
-                <p class="mb-3 text-md"><strong>Resumo:</strong> Organização que produz relatórios de pesquisa e advocacy sobre pobreza e desigualdade, como a série "A Distância que nos Une".</p>
-                <p class="mb-3 text-md"><strong>Critério de Seleção:</strong> Representa a voz da sociedade civil, traduzindo dados em narrativas políticas e focando em dimensões interseccionais.</p>
-                <p class="mb-3 text-md"><strong>Análise:</strong> Fonte explicitamente parcial (advocacy), o que é sua força e seu viés. Não produz dados primários, mas sua análise é influente e rigorosa.</p>
+                <h2 class="text-xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (3/5)</h2>
+                <h3 class="text-lg md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">Oxfam Brasil (ONG)</h3>
+                <p class="mb-3 text-sm md:text-md"><strong>Resumo:</strong> Organização que produz relatórios de pesquisa e advocacy sobre pobreza e desigualdade, como a série "A Distância que nos Une".</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Critério de Seleção:</strong> Representa a voz da sociedade civil, traduzindo dados em narrativas políticas e focando em dimensões interseccionais.</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Análise:</strong> Fonte explicitamente parcial (advocacy), o que é sua força e seu viés. Não produz dados primários, mas sua análise é influente e rigorosa.</p>
             </div>
 
-             <!-- Slide 7: b) Desenvolvimento - Fonte 4 -->
-            <div data-slide="7" class="slide slide-hidden flex flex-col justify-center bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (4/5)</h2>
-                <h3 class="text-xl md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">Observatório das Metrópoles (Acadêmica)</h3>
-                <p class="mb-3 text-md"><strong>Resumo:</strong> Rede de pesquisa nacional (IPPUR/UFRJ) focada nos desafios metropolitanos, incluindo desigualdades socioterritoriais.</p>
-                <p class="mb-3 text-md"><strong>Critério de Seleção:</strong> Foco na dimensão territorial da desigualdade, crucial para o contexto urbano do Brasil. Autoridade acadêmica.</p>
-                <p class="mb-3 text-md"><strong>Análise:</strong> Alta profundidade analítica e rigor metodológico. Escopo geográfico limitado às metrópoles, não cobrindo realidades rurais ou de cidades menores.</p>
+             <div data-slide="7" class="slide slide-hidden flex flex-col justify-center bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                <h2 class="text-xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (4/5)</h2>
+                <h3 class="text-lg md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">Observatório das Metrópoles (Acadêmica)</h3>
+                <p class="mb-3 text-sm md:text-md"><strong>Resumo:</strong> Rede de pesquisa nacional (IPPUR/UFRJ) focada nos desafios metropolitanos, incluindo desigualdades socioterritoriais.</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Critério de Seleção:</strong> Foco na dimensão territorial da desigualdade, crucial para o contexto urbano do Brasil. Autoridade acadêmica.</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Análise:</strong> Alta profundidade analítica e rigor metodológico. Escopo geográfico limitado às metrópoles, não cobrindo realidades rurais ou de cidades menores.</p>
             </div>
 
-             <!-- Slide 8: b) Desenvolvimento - Fonte 5 -->
-            <div data-slide="8" class="slide slide-hidden flex flex-col justify-center bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (5/5)</h2>
-                <h3 class="text-xl md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">Gênero e Número (Jornalismo de Dados)</h3>
-                <p class="mb-3 text-md"><strong>Resumo:</strong> Plataforma de jornalismo de dados e narrativas visuais focada em questões de gênero e raça no Brasil.</p>
-                <p class="mb-3 text-md"><strong>Critério de Seleção:</strong> Formato inovador e essencial para dar visibilidade a recortes específicos de gênero e raça com dados acessíveis.</p>
-                <p class="mb-3 text-md"><strong>Análise:</strong> Grande capacidade de cruzar e visualizar dados públicos de forma inédita. Produção guiada por pautas, não sendo um repositório sistemático.</p>
+             <div data-slide="8" class="slide slide-hidden flex flex-col justify-center bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                <h2 class="text-xl md:text-3xl font-bold mb-4">b) Desenvolvimento: Análise de Fontes (5/5)</h2>
+                <h3 class="text-lg md:text-2xl font-bold text-red-600 dark:text-red-400 mb-4">Gênero e Número (Jornalismo de Dados)</h3>
+                <p class="mb-3 text-sm md:text-md"><strong>Resumo:</strong> Plataforma de jornalismo de dados e narrativas visuais focada em questões de gênero e raça no Brasil.</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Critério de Seleção:</strong> Formato inovador e essencial para dar visibilidade a recortes específicos de gênero e raça com dados acessíveis.</p>
+                <p class="mb-3 text-sm md:text-md"><strong>Análise:</strong> Grande capacidade de cruzar e visualizar dados públicos de forma inédita. Produção guiada por pautas, não sendo um repositório sistemático.</p>
             </div>
 
-             <!-- Slide 9: c) Apresentação - Quadro-Síntese -->
-            <div data-slide="9" class="slide slide-hidden flex flex-col justify-center bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">c) Apresentação: Quadro-Síntese</h2>
+             <div data-slide="9" class="slide slide-hidden flex flex-col justify-center bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                <h2 class="text-xl md:text-3xl font-bold mb-4">c) Apresentação: Quadro-Síntese</h2>
                 <div class="overflow-x-auto">
-                    <table class="table-custom">
+                    <table class="table-custom min-w-[600px] md:min-w-full">
                         <thead>
                             <tr>
                                 <th>Fonte</th>
@@ -242,17 +232,15 @@
                 </div>
             </div>
 
-            <!-- Slide 10: d) Considerações Finais -->
             <div data-slide="10" class="slide slide-hidden flex flex-col justify-center bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">d) Considerações Finais</h2>
-                <p class="text-lg md:text-xl max-w-4xl">A qualidade da informação é a base para o atendimento ao usuário na biblioteca. O profissional da informação, ao conhecer criticamente as fontes, transcende a função de mero "localizador" de dados.</p>
-                 <p class="text-lg md:text-xl mt-4 max-w-4xl">Ele se torna um <strong class="text-pink-600 dark:text-pink-400">mediador</strong> que capacita o usuário a entender as nuances da desigualdade e usar a informação para o exercício da cidadania. A biblioteca, assim, se firma como um <strong class="text-pink-600 dark:text-pink-400">agente ativo</strong> na promoção do ODS 10, qualificando o debate público.</p>
+                <h2 class="text-xl md:text-3xl font-bold mb-4">d) Considerações Finais</h2>
+                <p class="text-base md:text-xl max-w-4xl">A qualidade da informação é a base para o atendimento ao usuário na biblioteca. O profissional da informação, ao conhecer criticamente as fontes, transcende a função de mero "localizador" de dados.</p>
+                 <p class="text-base md:text-xl mt-4 max-w-4xl">Ele se torna um <strong class="text-pink-600 dark:text-pink-400">mediador</strong> que capacita o usuário a entender as nuances da desigualdade e usar a informação para o exercício da cidadania. A biblioteca, assim, se firma como um <strong class="text-pink-600 dark:text-pink-400">agente ativo</strong> na promoção do ODS 10, qualificando o debate público.</p>
             </div>
 
-             <!-- Slide 11: e) Referências -->
-            <div data-slide="11" class="slide slide-hidden flex flex-col justify-center bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">e) Referências</h2>
-                <div class="references-list space-y-3 slide-text-dark">
+             <div data-slide="11" class="slide slide-hidden flex flex-col justify-center bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                <h2 class="text-xl md:text-3xl font-bold mb-4">e) Referências</h2>
+                <div class="references-list space-y-3 slide-text-dark text-xs sm:text-sm md:text-base">
                     <p>GÊNERO E NÚMERO. <strong>Mulheres na Política</strong>. Rio de Janeiro, RJ: Associação Gênero e Número, [20--]. Disponível em: https://www.generonumero.media/mulheres-na-politica/. Acesso em: 23 jun. 2025.</p>
                     <p>INSTITUTO DE PESQUISA ECONÔMICA APLICADA. <strong>Renda Domiciliar per capita</strong>. IpeaData, Brasília, DF: Ipea, [20--]. Disponível em: http://www.ipeadata.gov.br/ExibeSerie.aspx?serid=38401. Acesso em: 23 jun. 2025.</p>
                     <p>OBSERVATÓRIO DAS METRÓPOLES. <strong>Índice de Bem-Estar Urbano (IBEU)</strong>. Rio de Janeiro: IPPUR/UFRJ, [20--]. Disponível em: https://www.observatoriodasmetropoles.net.br/ibeu-2016-apresentacao/. Acesso em: 23 jun. 2025.</p>
@@ -261,14 +249,12 @@
                 </div>
             </div>
 
-            <!-- Slide 12: Conclusão -->
             <div data-slide="12" class="slide slide-hidden flex flex-col justify-center items-center text-center text-white bg-gray-900">
-                <h2 class="text-4xl md:text-5xl font-extrabold">Obrigado!</h2>
-                <p class="mt-6 text-xl text-gray-300 max-w-3xl">A redução das desigualdades é a base para um mundo sustentável, próspero e pacífico.</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold">Obrigado!</h2>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl">A redução das desigualdades é a base para um mundo sustentável, próspero e pacífico.</p>
             </div>
         </div>
 
-        <!-- Barra de Progresso e Controles Inferiores -->
         <div id="bottom-controls" class="absolute bottom-0 left-0 w-full z-10">
              <div class="w-full bg-gray-700 bg-opacity-30 h-1.5">
                 <div id="progress-bar" class="bg-red-500 h-1.5" style="width: 0%;"></div>
@@ -322,24 +308,37 @@
         downloadPdfBtn.addEventListener('click', () => {
             const element = document.getElementById('slides-wrapper');
             const opt = {
-              margin:       0,
-              filename:     'apresentacao-ods10.pdf',
-              image:        { type: 'jpeg', quality: 0.98 },
-              html2canvas:  { scale: 2, useCORS: true },
-              jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+                margin:       0,
+                filename:     'apresentacao-ods10.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
             };
-            // Para garantir que todos os slides sejam capturados, criamos um container temporário
+            
             const slides = document.querySelectorAll('.slide');
             const printContainer = document.createElement('div');
+            
+            // Definimos a largura do container de impressão para a proporção de paisagem (ex: 11in x 8.5in)
+            // Isso ajuda o html2pdf a renderizar os slides em um layout consistente.
+            printContainer.style.width = '1056px'; // Aprox. 11 inches at 96 DPI
 
             slides.forEach(slide => {
-                // Clonamos cada slide para não afetar a visualização atual
                 const slideClone = slide.cloneNode(true);
-                slideClone.classList.remove('slide-hidden', 'slide-active');
-                slideClone.style.position = 'relative'; 
-                slideClone.style.opacity = '1';
-                slideClone.style.transform = 'none';
-                printContainer.appendChild(slideClone);
+                slideClone.classList.remove('slide-hidden');
+                slideClone.classList.add('slide-active');
+                
+                // Forçamos um tamanho de aspect-video para cada slide no container de impressão
+                const slideWrapper = document.createElement('div');
+                slideWrapper.style.position = 'relative';
+                slideWrapper.style.width = '1056px';
+                slideWrapper.style.height = '594px'; // 1056 / (16/9)
+                
+                slideClone.style.position = 'absolute';
+                slideClone.style.top = '0';
+                slideClone.style.left = '0';
+                
+                slideWrapper.appendChild(slideClone);
+                printContainer.appendChild(slideWrapper);
             });
             
             html2pdf().from(printContainer).set(opt).save();
@@ -382,7 +381,8 @@
         prevBtn.addEventListener('click', prevSlide);
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') nextSlide();
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
             if (e.key === 'ArrowLeft') prevSlide();
         });
 
